@@ -26,12 +26,11 @@ export default class City extends React.Component<ICityProps, ICityState> {
 
     public render() {
         return (
-            <div className='col-md-4'>
-                <div className="card">
-                    <div className="card-body cds" onClick={this.detailsCity}>
-                        <h5 className="card-title">title</h5>
-                        <p className="card-text">{this.state.citystate}</p>
-
+            <div className='col-sm-4 '>
+                <div className="card ">
+                    <img className='card-img-top' src='http://kidzfunparties.com/wp-content/uploads/2016/05/sun-clipart.png' alt='Card image cap'/>
+                    <div className="card-body cBody" onClick={this.detailsCity}>
+                        <h5 className="card-title">{this.state.citystate}</h5>
                     </div>
                 </div>
             </div>

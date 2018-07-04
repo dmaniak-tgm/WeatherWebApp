@@ -1,0 +1,30 @@
+.card{
+    margin-top: 30%;
+    margin-bottom: 15px;
+    text-align:center;
+    color: black
+}
+
+.cBody{
+    background-color: rgb(241, 241, 241);
+}
+
+.card:hover{
+    box-shadow: 8px 8px 5px gainsboro;
+}
+
+
+
+
+
+
+
+@media (max-width:576px){
+    .card{
+        margin-top: 15px;
+        margin-bottom:15px;
+        text-align:center;
+        color: black
+    }
+    
+}
