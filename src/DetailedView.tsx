@@ -26,6 +26,7 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
 
         return (
             <div>
+                hallo
                 <img src={this.props.cityURL} height="150px" width="auto" />
                 <h3>{this.props.city} ({this.props.country})</h3>
                 <h3>{this.state.tempInC}° C</h3>
@@ -35,7 +36,9 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
     }
 
     private getTodaysDate(): string {
-        return moment().tz(this.props.country + "/" + this.props.city).format("DD.MM.YYYY HH:mm");
+        return moment()
+            .tz(this.props.country + "/" + this.props.city)
+            .format("DD.MM.YYYY HH:mm");
     }
 
     private getTodaysTemp(): number {

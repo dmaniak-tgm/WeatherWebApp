@@ -4,7 +4,8 @@ import './City.css';
 export interface ICityProps {
     name: string;
     src: string;
-    activateDetails: (name: string) => void
+    country: string;
+    activateDetails: (city: string, country: string, cityURL: string) => void
 }
 
 interface ICityState {
@@ -21,7 +22,7 @@ export default class City extends React.Component<ICityProps, ICityState> {
 
     public render() {
         return (
-            <div className='col-sm-4 ' onClick={() => { this.props.activateDetails(this.state.citystate) }}>
+            <div className='col-sm-4 ' onClick={() => { this.props.activateDetails(this.state.citystate, this.props.country, this.props.src) }}>
                 <div className="card ">
                     <img className='card-img-top' src={this.props.src} alt={this.props.src} />
                     <div className="card-body cBody">
