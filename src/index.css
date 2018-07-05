@@ -1,5 +1,5 @@
 #footer{
-    background-color: ghostwhite;
+    background-color: rgb(36, 36, 36);
     position: fixed;
     bottom: 0px;
     width: 100vw;
@@ -9,6 +9,27 @@
 #Wrapper{
     height: 100vh; 
     width:100vw;
-    padding-bottom: 70px;
-    background-color: rgb(255, 255, 255)
+    
+}
+
+#Infotitle{
+    padding-top: 30px;
+    color: rgb(253, 199, 119);
+    font-size: 80px;
+    text-align: center;
+}
+
+body{
+    background-color: rgb(56, 56, 56)!important;
+}
+
+#byperson{
+    font-size: 2vh;
+    margin-left: 10px;
+    line-height: 50px;
+    color: white;
+}
+
+.name{
+    color: rgb(253, 199, 119);
 }

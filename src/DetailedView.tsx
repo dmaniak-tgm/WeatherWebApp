@@ -16,21 +16,22 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
     constructor(props: IDetailedViewProps) {
         super(props);
         this.getTodaysTemp();
-
     }
 
     public render() {
-        
-        if(!this.state) {
-            return(<div></div>);
-        }
+        if(!this.state) return(<div></div>);
 
         return (
-            <div>
-                <img src={this.props.cityURL} height="150px" width="auto" />
-                <h3>{this.props.city} ({this.props.country})</h3>
-                <h3>{this.state.tempInC[0]}° C</h3>
-                <h3>{this.state.tempInC[1]}</h3>
+            <div className="col-sm-12">
+                <div id="details">
+                    <img className="imgDetails" src={this.props.cityURL} alt="" />
+                    <div id="innerdetails">
+                        <h3 className="hDetails">{this.props.city} ({this.props.country})</h3>
+                        <h3 className="hDetails">{this.state.tempInC[0]}° C</h3>
+                        <h3 className="hDetails">{this.state.tempInC[1]}</h3>
+                    </div>
+
+                </div>
             </div>
         );
     }

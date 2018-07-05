@@ -1,23 +1,26 @@
 .card{
-    margin-top: 30%;
+    margin-top: 20%;
     margin-bottom: 15px;
     text-align:center;
     color: black;
-    background-color: transparent;
-    box-shadow: 3px 3px 5px gainsboro;
+    background-color: rgba(36, 36, 36, .5);
+    box-shadow: 5px 5px 5px rgb(36, 36, 36);
+    transition-duration: 0.3s;
+}
+
+.card:hover{
+    box-shadow: 10px 10px 10px rgb(36, 36, 36);
+    background-color: rgba(59, 59, 59, 0.7);
+    transition-duration: 0.3s;
 }
 
 .card-title{
     font-size: 6vh;
+    color: white;
 }
 
 .cBody{
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.card:hover{
-    box-shadow: 8px 8px 8px rgb(207, 207, 207);
-    transition-duration: 0.3s;
+    background-color: transparent;
 }
 
 .card-img-top{
