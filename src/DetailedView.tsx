@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './DetailedView.css';
-import * as moment from 'moment-timezone';
 import weather from "yahoo-weather";
 
 interface IDetailedViewProps {
@@ -10,45 +9,39 @@ interface IDetailedViewProps {
 }
 
 interface IDetailedViewState {
-    tempInC: number,
+    tempInC: [number, string], // temperature and date it was measured at
 }
 
 class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewState> {
     constructor(props: IDetailedViewProps) {
         super(props);
-        this.state = {
-            tempInC: this.getTodaysTemp(),
-        }
+        this.getTodaysTemp();
+
     }
 
     public render() {
-        this.getTodaysDate();
+        
+        if(!this.state) {
+            return(<div></div>);
+        }
 
         return (
             <div>
-                hallo
                 <img src={this.props.cityURL} height="150px" width="auto" />
                 <h3>{this.props.city} ({this.props.country})</h3>
-                <h3>{this.state.tempInC}° C</h3>
-                <h3>{this.getTodaysDate()}</h3>
+                <h3>{this.state.tempInC[0]}° C</h3>
+                <h3>{this.state.tempInC[1]}</h3>
             </div>
         );
     }
 
-    private getTodaysDate(): string {
-        return moment()
-            .tz(this.props.country + "/" + this.props.city)
-            .format("DD.MM.YYYY HH:mm");
-    }
-
-    private getTodaysTemp(): number {
+    private getTodaysTemp(): void {
         weather(this.props.city, "c").then((data: any) => {
+            let forecast = data.item.forecast[0]; 
             this.setState({
-                tempInC: data.item.forecast[0].high,
+                tempInC: [forecast.high, forecast.date]
             });
         });
-
-        return -1;
     }
 
 }
