@@ -2,18 +2,28 @@
     margin-top: 30%;
     margin-bottom: 15px;
     text-align:center;
-    color: black
+    color: black;
+    background-color: transparent;
+    box-shadow: 3px 3px 5px gainsboro;
+}
+
+.card-title{
+    font-size: 6vh;
 }
 
 .cBody{
-    background-color: rgb(241, 241, 241);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .card:hover{
-    box-shadow: 8px 8px 5px gainsboro;
+    box-shadow: 8px 8px 8px rgb(207, 207, 207);
+    transition-duration: 0.3s;
 }
 
-
+.card-img-top{
+    height: 300px;
+    object-fit: cover;
+}
 
 
 
@@ -25,6 +35,18 @@
         margin-bottom:15px;
         text-align:center;
         color: black
+    }
+    
+    .card-img-top{
+        height: 300px;
+    object-fit: cover;
+    }
+}
+
+@media (max-width:992px){
+    .card-img-top{
+        height: 200px;
+    object-fit: cover;
     }
     
 }

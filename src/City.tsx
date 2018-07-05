@@ -3,6 +3,8 @@ import './City.css';
 
 export interface ICityProps {
     name: string;
+    src: string;
+    activateDetails: (name: string) => void
 }
 
 interface ICityState {
@@ -26,11 +28,11 @@ export default class City extends React.Component<ICityProps, ICityState> {
 
     public render() {
         return (
-            <div className='col-sm-4 '>
+            <div className='col-sm-4 ' onClick={() => { this.props.activateDetails(this.state.citystate) }}>
                 <div className="card ">
-                    <img className='card-img-top' src='http://kidzfunparties.com/wp-content/uploads/2016/05/sun-clipart.png' alt='Card image cap'/>
+                    <img className='card-img-top' src={this.props.src} alt={this.props.src} />
                     <div className="card-body cBody" onClick={this.detailsCity}>
-                        <h5 className="card-title">{this.state.citystate}</h5>
+                        <h3 className="card-title display-4">{this.state.citystate}</h3>
                     </div>
                 </div>
             </div>

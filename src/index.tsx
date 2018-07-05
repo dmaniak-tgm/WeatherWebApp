@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import CitiesView from './CitiesView';
+import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <CitiesView />,
+  <App />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

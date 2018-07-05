@@ -2,12 +2,16 @@ import * as React from 'react';
 import City from 'src/City';
 import './CitiesView.css';
 
-class CitiesView extends React.Component {
+interface ICitiesViewProps {
+    activateDetails: (name: string) => void
+}
+class CitiesView extends React.Component<ICitiesViewProps> {
+    //private cities = [];
     public render() {
         return <>
-            <City name="Moskau " />
-            <City name="Wien" />
-            <City name="New York" />
+            <City activateDetails={this.props.activateDetails.bind(this)} name="Moskau" src="./Bilder/Moskau.jpg" />
+            <City activateDetails={this.props.activateDetails.bind(this)} name="Wien" src="./Bilder/Wien.jpg" />
+            <City activateDetails={this.props.activateDetails.bind(this)} name="New York" src="./Bilder/NewYork.jpg" />
         </>
     }
 }
