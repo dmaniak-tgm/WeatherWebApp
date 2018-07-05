@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 import CitiesView from './CitiesView';
 import DetailedView from './DetailedView';
+import WeeklyView from './WeeklyView';
 
 interface IAppProp {
 }
@@ -38,12 +39,13 @@ class App extends React.Component<IAppProp, IAppState> {
     });
   }
   public render() {
-    return (
-      this.state.mode === "liste" ?
-        <CitiesView activateDetails={this.activateDetailsView.bind(this)}></CitiesView>
-        :
-        <DetailedView city={this.state.city} country={this.state.country} cityURL={this.state.cityURL} /> // TODO make it dynamic
-      );
+      if(this.state.mode === "liste"){
+        return <CitiesView activateDetails={this.activateDetailsView.bind(this)}></CitiesView>
+      }
+      else{
+        return <div><DetailedView city={this.state.city} country={this.state.country} cityURL={this.state.cityURL} />
+        <WeeklyView city={this.state.city}/></div>
+      } 
   }
 }
 
