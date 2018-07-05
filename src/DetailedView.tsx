@@ -25,11 +25,16 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
         this.getTodaysDate();
 
         return (
-            <div>
-                <img src={this.props.cityURL} height="150px" width="auto" />
-                <h3>{this.props.city} ({this.props.country})</h3>
-                <h3>{this.state.tempInC}° C</h3>
-                <h3>{this.getTodaysDate()}</h3>
+            <div className="col-sm-12">
+                <div id="details">
+                    <img className="imgDetails" src="./Bilder/Moskau.jpg" alt="" />
+                    <div id="innerdetails">
+                        <h3 className="hDetails">{this.props.city} ({this.props.country})</h3>
+                        <h3 className="hDetails">{this.state.tempInC}° C</h3>
+                        <h3 className="hDetails">{this.getTodaysDate()}</h3>
+                    </div>
+
+                </div>
             </div>
         );
     }
