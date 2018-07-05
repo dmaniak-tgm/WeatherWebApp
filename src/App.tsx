@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './App.css';
 import CitiesView from './CitiesView';
-//import DetailedView from './DetailedView';
+import DetailedView from './DetailedView';
+
 interface IAppProp {
 }
 interface IAppState {
@@ -27,8 +28,7 @@ class App extends React.Component<IAppProp, IAppState> {
       this.state.mode === "liste" ?
         <CitiesView activateDetails={this.activateDetailsView.bind(this)}></CitiesView>
         :
-        <div>,khjkk</div>
-      //<DetailedView />
+      <DetailedView city="vienna" country="austria" cityURL="" /> // TODO make it dynamic
     );
   }
 }
