@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment-timezone": "^0.5.21",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "2.16.0",
-    "set-default-browser": "^1.0.1"
+    "set-default-browser": "^1.0.1",
+    "yahoo-weather": "^2.2.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
