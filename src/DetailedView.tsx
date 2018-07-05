@@ -4,7 +4,6 @@ import weather from "yahoo-weather";
 
 interface IDetailedViewProps {
     city: string,
-    country: string,
     cityURL: string,
 }
 
@@ -26,7 +25,7 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
                 <div id="details">
                     <img className="imgDetails" src={this.props.cityURL} alt="" />
                     <div id="innerdetails">
-                        <h3 className="hDetails">{this.props.city} ({this.props.country})</h3>
+                        <h3 className="hDetails">{this.props.city}</h3>
                         <h3 className="hDetails">{this.state.tempInC[0]}° C</h3>
                         <h3 className="hDetails">{this.state.tempInC[1]}</h3>
                     </div>
