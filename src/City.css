@@ -1,22 +1,23 @@
 .card{
-    margin-top: 30%;
+    margin-top: 20%;
     margin-bottom: 15px;
     text-align:center;
     color: black;
     background-color: transparent;
-    box-shadow: 3px 3px 5px gainsboro;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 .card-title{
     font-size: 6vh;
+    color: white;
 }
 
 .cBody{
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(36, 36, 36, .5);
 }
 
 .card:hover{
-    box-shadow: 8px 8px 8px rgb(207, 207, 207);
+    box-shadow: 8px 8px 8px rgb(0, 0, 0);
     transition-duration: 0.3s;
 }
 
