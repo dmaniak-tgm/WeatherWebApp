@@ -7,9 +7,9 @@ interface ICitiesViewProps {
 }
 class CitiesView extends React.Component<ICitiesViewProps> {
     private cities = [
-        ["Moskau", "./Bilder/Moskau.jpg"],
-        ["Wien", "./Bilder/Wien.jpg"],
-        ["New York", "./Bilder/NewYork.jpg"],
+        ["Moskau", "./img/moskau.jpg"],
+        ["Wien", "./img/wien.jpg"],
+        ["New York", "./img/nyc.jpg"],
     ];
 
     public render() {
