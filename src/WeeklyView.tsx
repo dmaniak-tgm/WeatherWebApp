@@ -4,12 +4,11 @@ import weather from "yahoo-weather";
 
 export interface IWeeklyViewProps {
     city: string,
-
 }
 
 interface IWeeklyViewState {
     days: Array<string>,
-    celsius: Array<string>
+    celsius: Array<string>,
 }
 
 export default class WeeklyView extends React.Component<IWeeklyViewProps, IWeeklyViewState>{
@@ -24,32 +23,32 @@ export default class WeeklyView extends React.Component<IWeeklyViewProps, IWeekl
     }
 
     render() {
-        console.log(this.state);
         if (!this.state.days || !this.state.celsius || !this.state) return (<div></div>);
 
         let show = [];
 
         for (let i = 0; i < 5; i++) {
-            if(i==0){
-              show.push(
-                <div className="col-sm-2 offset-sm-1">
-                    <h1>{this.state.celsius[i]+'°C'}</h1>
-                    <br/>
-                    <p>{this.state.days[i]}</p>
-                </div>);  
+            if (i == 0) {
+                show.push(
+                    <div className="col-sm-2 offset-sm-1">
+                        <h1>{this.state.celsius[i] + '°C'}</h1>
+                        <br />
+                        <p>{this.state.days[i]}</p>
+                    </div>
+                );
             }
-            else{
+            else {
                 show.push(
                     <div className="col-sm-2">
-                        <h1>{this.state.celsius[i]+'°C'}</h1>
-                        <br/>
+                        <h1>{this.state.celsius[i] + '°C'}</h1>
+                        <br />
                         <p>{this.state.days[i]}</p>
-                    </div>);
+                    </div>
+                );
             }
-                
         }
-        
-        return(
+
+        return (
             <div id="weekRow" className="row">{show}</div>
         )
     }
@@ -59,16 +58,15 @@ export default class WeeklyView extends React.Component<IWeeklyViewProps, IWeekl
             let forecast = data.item.forecast;
             let arrDay: Array<string> = [];
             let arrHigh: Array<string> = [];
+
             for (let i = 1; i < 6; i++) {
                 arrDay.push(forecast[i].date); console.log(forecast[i].date);
-            };
-            for (let i = 1; i < 6; i++) {
                 arrHigh.push(forecast[i].high);
-                console.log(forecast[i].high);
             };
+
             this.setState({
                 days: arrDay,
-                celsius: arrHigh
+                celsius: arrHigh,
             });
         });
     }

@@ -5,7 +5,7 @@ import weather from "yahoo-weather";
 interface IDetailedViewProps {
     city: string,
     cityURL: string,
-    activateListView:() => void
+    activateListView: () => void,
 }
 
 interface IDetailedViewState {
@@ -23,7 +23,13 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
 
         return (
             <div>
-                <button id="back" className="btn btn-outline-warning" onClick={()=>{this.props.activateListView()}}>Back</button>
+                <button
+                    id="back"
+                    className="btn btn-outline-warning"
+                    onClick={() => { this.props.activateListView() }}>
+                    Back
+                </button>
+
                 <div className="col-sm-12">
                     <div id="details">
                         <img className="imgDetails" src={this.props.cityURL} alt="" />

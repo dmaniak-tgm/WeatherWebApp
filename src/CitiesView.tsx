@@ -5,6 +5,7 @@ import './CitiesView.css';
 interface ICitiesViewProps {
     activateDetails: (city: string, cityURL: string) => void;
 }
+
 class CitiesView extends React.Component<ICitiesViewProps> {
     private cities = [
         ["Moskau", "./img/moskau.jpg"],
@@ -12,10 +13,10 @@ class CitiesView extends React.Component<ICitiesViewProps> {
         ["New York", "./img/nyc.jpg"],
     ];
 
-    public render() {
+    render() {
         let comps = [];
-        
-        for(let i = 0; i < this.cities.length; i++) {
+
+        for (let i = 0; i < this.cities.length; i++) {
             comps.push(
                 <City
                     activateDetails={this.props.activateDetails.bind(this)}
@@ -25,7 +26,7 @@ class CitiesView extends React.Component<ICitiesViewProps> {
             );
         }
 
-        return(
+        return (
             <>{comps}</>
         );
     }

@@ -4,7 +4,7 @@ import CitiesView from './CitiesView';
 import DetailedView from './DetailedView';
 import WeeklyView from './WeeklyView';
 
-interface IAppProp {}
+interface IAppProp { }
 interface IAppState {
   mode: string,
   city: string,
@@ -12,14 +12,14 @@ interface IAppState {
 }
 
 class App extends React.Component<IAppProp, IAppState> {
-  public state = {
+  state = {
     mode: "liste",
     city: "",
     country: "",
     cityURL: "",
   };
 
-  public activateDetailsView(city: string, cityURL: string) {
+  activateDetailsView(city: string, cityURL: string) {
     this.setState({
       mode: "details",
       city: city,
@@ -27,21 +27,22 @@ class App extends React.Component<IAppProp, IAppState> {
     });
   }
 
-  public activateListView() { // TODO
+  activateListView() {
     this.setState({
       mode: "liste",
       city: "",
       cityURL: "",
     });
   }
-  public render() {
-      if(this.state.mode === "liste"){
-        return <CitiesView activateDetails={this.activateDetailsView.bind(this)}></CitiesView>
-      }
-      else{
-        return <div id="detailWrapper"><DetailedView city={this.state.city} cityURL={this.state.cityURL} activateListView={this.activateListView.bind(this)} />
-        <WeeklyView city={this.state.city}/></div>
-      } 
+
+  render() {
+    if (this.state.mode === "liste") {
+      return <CitiesView activateDetails={this.activateDetailsView.bind(this)}></CitiesView>
+    }
+    else {
+      return <div id="detailWrapper"><DetailedView city={this.state.city} cityURL={this.state.cityURL} activateListView={this.activateListView.bind(this)} />
+        <WeeklyView city={this.state.city} /></div>
+    }
   }
 }
 
