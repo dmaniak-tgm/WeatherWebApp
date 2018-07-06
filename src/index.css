@@ -6,13 +6,12 @@
     height: 50px;
 }
 
-#Wrapper{
+#wrapper{
     height: 100vh; 
     width:100vw;
-    
 }
 
-#Infotitle{
+#infotitle{
     padding-top: 30px;
     color: #ffc107;
     font-size: 80px;
