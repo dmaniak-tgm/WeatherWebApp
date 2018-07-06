@@ -4,12 +4,10 @@ import CitiesView from './CitiesView';
 import DetailedView from './DetailedView';
 import WeeklyView from './WeeklyView';
 
-interface IAppProp {
-}
+interface IAppProp {}
 interface IAppState {
   mode: string,
   city: string,
-  country: string,
   cityURL: string,
 }
 
@@ -21,11 +19,10 @@ class App extends React.Component<IAppProp, IAppState> {
     cityURL: "",
   };
 
-  public activateDetailsView(city: string, country: string, cityURL: string) {
+  public activateDetailsView(city: string, cityURL: string) {
     this.setState({
       mode: "details",
       city: city,
-      country: country,
       cityURL: cityURL,
     });
   }
@@ -34,7 +31,6 @@ class App extends React.Component<IAppProp, IAppState> {
     this.setState({
       mode: "liste",
       city: "",
-      country: "",
       cityURL: "",
     });
   }
@@ -43,7 +39,7 @@ class App extends React.Component<IAppProp, IAppState> {
         return <CitiesView activateDetails={this.activateDetailsView.bind(this)}></CitiesView>
       }
       else{
-        return <div id="detailWrapper"><DetailedView city={this.state.city} country={this.state.country} cityURL={this.state.cityURL} activateListView={this.activateListView.bind(this)} />
+        return <div id="detailWrapper"><DetailedView city={this.state.city} cityURL={this.state.cityURL} activateListView={this.activateListView.bind(this)} />
         <WeeklyView city={this.state.city}/></div>
       } 
   }
