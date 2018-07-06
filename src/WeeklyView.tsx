@@ -24,10 +24,11 @@ export default class WeeklyView extends React.Component<IWeeklyViewProps, IWeekl
     }
 
     render(){
-        if(this.state.days||!this.state.celsius||!this.state) return(<div></div>)
+        console.log(this.state);
+        if(!this.state.days||!this.state.celsius||!this.state) return(<div></div>)
         return(
             <div className="col-sm-12">
-                <p>{this.state.days[0]}+{this.state.celsius[0]}</p>
+                <h1>{this.state.days[0]}+{this.state.celsius[0]}</h1>
             </div>
         );
     }

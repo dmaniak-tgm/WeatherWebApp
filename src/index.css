@@ -14,7 +14,7 @@
 
 #Infotitle{
     padding-top: 30px;
-    color: rgb(253, 199, 119);
+    color: #ffc107;
     font-size: 80px;
     text-align: center;
 }
@@ -31,5 +31,5 @@ body{
 }
 
 .name{
-    color: rgb(253, 199, 119);
+    color: #ffc107;
 }

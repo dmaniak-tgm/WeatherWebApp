@@ -6,6 +6,7 @@ interface IDetailedViewProps {
     city: string,
     country: string,
     cityURL: string,
+    activateListView:() => void
 }
 
 interface IDetailedViewState {
@@ -19,18 +20,21 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
     }
 
     public render() {
-        if(!this.state) return(<div></div>);
+        if (!this.state) return (<div></div>);
 
         return (
-            <div className="col-sm-12">
-                <div id="details">
-                    <img className="imgDetails" src={this.props.cityURL} alt="" />
-                    <div id="innerdetails">
-                        <h3 className="hDetails">{this.props.city} ({this.props.country})</h3>
-                        <h3 className="hDetails">{this.state.tempInC[0]}° C</h3>
-                        <h3 className="hDetails">{this.state.tempInC[1]}</h3>
-                    </div>
+            <div>
+                <button id="back" className="btn btn-outline-warning" onClick={()=>{this.props.activateListView()}}>Back</button>
+                <div className="col-sm-12">
+                    <div id="details">
+                        <img className="imgDetails" src={this.props.cityURL} alt="" />
+                        <div id="innerdetails">
+                            <h3 className="hDetails">{this.props.city} ({this.props.country})</h3>
+                            <h3 className="hDetails">{this.state.tempInC[0]}° C</h3>
+                            <h3 className="hDetails">{this.state.tempInC[1]}</h3>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         );
@@ -38,7 +42,7 @@ class DetailedView extends React.Component<IDetailedViewProps, IDetailedViewStat
 
     private getTodaysTemp(): void {
         weather(this.props.city, "c").then((data: any) => {
-            let forecast = data.item.forecast[0]; 
+            let forecast = data.item.forecast[0];
             this.setState({
                 tempInC: [forecast.high, forecast.date]
             });

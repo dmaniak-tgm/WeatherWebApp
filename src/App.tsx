@@ -32,7 +32,7 @@ class App extends React.Component<IAppProp, IAppState> {
 
   public activateListView() { // TODO
     this.setState({
-      mode: "details",
+      mode: "liste",
       city: "",
       country: "",
       cityURL: "",
@@ -43,7 +43,7 @@ class App extends React.Component<IAppProp, IAppState> {
         return <CitiesView activateDetails={this.activateDetailsView.bind(this)}></CitiesView>
       }
       else{
-        return <div><DetailedView city={this.state.city} country={this.state.country} cityURL={this.state.cityURL} />
+        return <div id="detailWrapper"><DetailedView city={this.state.city} country={this.state.country} cityURL={this.state.cityURL} activateListView={this.activateListView.bind(this)} />
         <WeeklyView city={this.state.city}/></div>
       } 
   }
