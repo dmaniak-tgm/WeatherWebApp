@@ -11,6 +11,7 @@ class CitiesView extends React.Component<ICitiesViewProps> {
         ["Wien", "./Bilder/Wien.jpg"],
         ["New York", "./Bilder/NewYork.jpg"],
     ];
+
     public render() {
         let comps = [];
         
