@@ -30,16 +30,15 @@ export default class WeeklyView extends React.Component<IWeeklyViewProps, IWeekl
         for (let i = 0; i < 5; i++) {
             if (i == 0) {
                 show.push(
-                    <div className="col-sm-2 offset-sm-1">
+                    <div className="col-sm-2 offset-sm-1 fCastDay">
                         <h1>{this.state.celsius[i] + '°C'}</h1>
                         <br />
                         <p>{this.state.days[i]}</p>
-                    </div>
-                );
+                    </div>);
             }
             else {
                 show.push(
-                    <div className="col-sm-2">
+                    <div className="col-sm-2 fCastDay">
                         <h1>{this.state.celsius[i] + '°C'}</h1>
                         <br />
                         <p>{this.state.days[i]}</p>

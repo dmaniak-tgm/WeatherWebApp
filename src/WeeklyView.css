@@ -1,5 +1,17 @@
 #weekRow{
     margin-top: 30px;
     justify-content: center;
+
+}
+
+.fCastDay:hover{
+    transition-duration: 0.3s;
     color: white;
+    cursor: default;
+}
+
+.fCastDay{
+    color: rgb(196, 196, 196);
+    transition-duration: 0.3s;
+    
 }
